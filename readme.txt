@@ -36,3 +36,6 @@ Fyrebox allows you to create simple game for your website, blog of facebook page
 
 = 1.0 =
 * First version
+
+= 1.1 =
+* Change iframe link
