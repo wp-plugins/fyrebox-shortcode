@@ -3,7 +3,7 @@
 Plugin Name: FyreBox Shortcode
 Plugin URI: http://wordpress.org/extend/plugins/fyrebox-shortcode/
 Description: Converts Fyrebox WordPress shortcodes to a Fyrebox widget. Example: [fyrebox gid="i6WOeUCiUl" gt="8" /]
-Version: 1.1
+Version: 1.2
 Author: Fyrebox Pty Ltd
 Author URI: http://fyrebox.co
 License: GPLv2
@@ -40,7 +40,7 @@ function fyrebox_shortcode($atts, $content = null) {
  */
 function fyrebox_iframe_widget($options) {
 
-  $url = 'https://www.fyrebox.co/wg/'.$options['gt'].'/'.$options['oid'].'/'.$options['gid'];
+  $url = 'https://www.fyrebox.com/wg/'.$options['gt'].'/'.$options['oid'].'/'.$options['gid'];
   switch($options['gt']){
     case '7':
       $height = 650;
