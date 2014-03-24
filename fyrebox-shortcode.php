@@ -86,7 +86,7 @@ function fyrebox_shortcode_options() {
 ?>
 <div class="wrap">
   <h2>FyreBox Shortcode Settings</h2>
-  <p>At the moment, there are no settings. Just use the shortcode provided on the publish page of your game. If you haven't created a game yet, just go to <a href="http://www.fyrebox.co" target=_blank>Fyrebox.co</a> to get started.</p>
+  <p>At the moment, there are no settings. Just use the shortcode provided on the publish page of your game. If you haven't created a game yet, just go to <a href="http://www.fyrebox.com?utm_source=wordpress&utm_medium=settings&utm_campaign=plugin" target=_blank>Fyrebox.com</a> to get started.</p>
 
 <?php
 }
