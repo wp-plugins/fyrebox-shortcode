@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: FyreBox Shortcode
+Plugin Name: Fyrebox Shortcode
 Plugin URI: http://wordpress.org/extend/plugins/fyrebox-shortcode/
-Description: Converts Fyrebox WordPress shortcodes to a Fyrebox widget. Example: [fyrebox gid="i6WOeUCiUl" gt="8" /]
-Version: 1.3
-Author: Fyrebox Pty Ltd
-Author URI: http://fyrebox.co
+Description: Enables shortcodes for Fyrebox quizzes. Example: [fyrebox gid="RBkzEXpGLo" gt="6" oid="2TKxpeyZpH" /]. The shortcode is available on the Share page of your quiz.
+Version: 1.4
+Author: Fyrebox
+Author URI: https://fyrebox.com
 License: GPLv2
 
-Original version: Cyril Gaillard <cyril@fyrebox.co>
+Original version: Cyril Gaillard <cyril@fyrebox.com>
 */
 
 /* Register Fyrebox shortcode
@@ -41,18 +41,8 @@ function fyrebox_shortcode($atts, $content = null) {
 function fyrebox_iframe_widget($options) {
 
   $url = 'https://www.fyrebox.com/wg/'.$options['gt'].'/'.$options['oid'].'/'.$options['gid'];
-  switch($options['gt']){
-    case '7':
-      $height = 650;
-    break;
-    case '8':
-      $height = 420;
-    break;
-    default:
-      $height = 400;
-    break;
-  }
-  return sprintf('<iframe width="700" height=%s scrolling="no" frameborder="no" allowTransparency="true" src="%s"></iframe>',$height ,$url);
+  return sprintf('<iframe width="100%%" height="400px" scrolling="true" frameborder="no" allowTransparency="true" src="%s"></iframe>',$url);
+  
 }
 
 
@@ -71,7 +61,7 @@ function fyrebox_settings_link($links) {
 /* Add admin menu */
 add_action('admin_menu', 'fyrebox_shortcode_options_menu');
 function fyrebox_shortcode_options_menu() {
-  add_options_page('FyreBox Options', 'FyreBox', 'manage_options', 'fyrebox-shortcode', 'fyrebox_shortcode_options');
+  add_options_page('Fyrebox Options', 'FyreBox', 'manage_options', 'fyrebox-shortcode', 'fyrebox_shortcode_options');
   add_action('admin_init', 'register_fyrebox_settings');
 }
 
